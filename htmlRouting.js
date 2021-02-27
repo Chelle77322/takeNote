@@ -8,6 +8,6 @@ module.exports = (app) =>{
 
     });
     app.get("/index", (request, result) => {
-        result.sendFile(path.join(__dirname, "/index.html"));
+        result.sendFile(path.join(__dirname, "./index.html"));
     });
 };

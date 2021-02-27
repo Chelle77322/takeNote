@@ -1,14 +1,14 @@
 {
-  "name": "note_taker",
+  "name": "takenote",
   "version": "1.0.0",
   "description": "App that allows user to take notes",
   "main": "start.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit1"
+    "test": "echo \"Error: Why Won't You Just Work \" && exit1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Chelle77322/note_taker.git"
+    "url": "git+https://github.com/Chelle77322/takeNote.git"
   },
   "keywords": [
     "Note",
@@ -17,9 +17,9 @@
   "author": "Michelle Hall",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Chelle77322/note_taker/issues"
+    "url": "https://github.com/Chelle77322/takeNote/issues"
   },
-  "homepage": "https://github.com/Chelle77322/note_taker#readme",
+  "homepage": "https://github.com/Chelle77322/takeNote/#readme",
   "dependencies": {
     "express": "^4.17.1"
   },
