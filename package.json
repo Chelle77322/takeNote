@@ -10,10 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Chelle77322/takeNote.git"
   },
-  "keywords": [
-    "Note",
-    "Taker"
-  ],
+  
   "author": "Michelle Hall",
   "license": "MIT",
   "bugs": {
