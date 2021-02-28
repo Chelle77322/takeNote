@@ -26,7 +26,7 @@ noteStore.push({note, ...request.body});
 result.json(noteStore.slice(-1));
 });
 //DELETE?
-app.delete('./notes/:note', (request, result)=>{
+app.delete('/api/notes/:note', (request, result)=>{
     let grabNote = noteStore.find(({note})=> note === JSON.parse(request.params.lastNote));
 //Confirms match to delete
 
