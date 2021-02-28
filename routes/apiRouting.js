@@ -1,5 +1,5 @@
 const { request, json } = require("express");
-const dbJSON = require('..db/db.json');
+const dbJSON = require('../db/db.json');
 const fs = require("fs");
 //Start of API Routing for app
 module.exports = (app =>{
