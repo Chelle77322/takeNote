@@ -2,7 +2,7 @@
   "name": "takenote",
   "version": "1.0.0",
   "description": "App that allows user to take notes",
-  "main": "start.js",
+  "main": "index.js",
   "dependencies": {
     "express": "^4.17.1"
   },
