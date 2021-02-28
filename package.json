@@ -20,5 +20,11 @@
   "dependencies": {
     "express": "^4.17.1"
   },
-  "devDependencies": {}
-}
+  "devDependencies": {
+    
+    },
+    "script": {
+      "start": "node start.js"
+    }
+  }
+
