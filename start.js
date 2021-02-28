@@ -2,7 +2,7 @@
 const express = require("express");
 //const path = require("path");
 //const fs = require("fs");
-const port = listen(process.env.port || 8080);
+const port = process.env.port || 8080;
 
 //Making sure the db.json file is doing what it should
 const dbJson = require('./db/db.json')
