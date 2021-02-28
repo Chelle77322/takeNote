@@ -10,7 +10,7 @@ var $noteStore = $(".list-container .list-group");
 var activeNote = {};
 
 // A function for getting all notes from the db
-var loadingNotes = function () {
+var loadingNotes = function (note) {
   return $.ajax({
     url: "/api/notes",
     method: "GET"
@@ -128,7 +128,7 @@ var renderNoteStore = function (notes) {
 
 // Gets notes from the db and renders them to the slastNoteebar
 var getAndRenderNotes = function () {
-  return loadingNotes().then(function (data) {
+  return loadingNotes(note).then(function (data) {
     renderNoteStore(data);
   });
 };
@@ -141,6 +141,6 @@ $noteTitle.on("keyup", handleRenderSaveBtn);
 $noteText.on("keyup", handleRenderSaveBtn);
 
 
-console.log($noteTitle);
+
 // Gets and renders the initial list of notes
 getAndRenderNotes();
