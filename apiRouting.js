@@ -5,7 +5,7 @@ const fs = require("fs");
 module.exports = (app =>{
     
   let noteStore = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
-    app.get('/api/notes', function (request, result) {
+    app.get('/', function (request, result) {
         
         return result.json(noteStore);
         
