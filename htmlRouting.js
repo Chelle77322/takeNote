@@ -1,13 +1,13 @@
 const { request } = require("http");
-var path = require("path");
+const path = require("path");
 //Specifies HTML ROUTING for app to work
 module.exports = (app) =>{
 
-    app.get("/notes", function (request, result){
-        result.sendFile(path.join(__dirname, "./public/notes.html"));
+    app.get('/notes', (request, result) => {
+        result.sendFile(path.join(__dirname, "/public.html"));
 
     });
     app.get("*", (request, result) => {
-        result.sendFile(path.join(__dirname, "./index.html"));
+        result.sendFile(path.join(__dirname, "/index.html"));
     });
 };
