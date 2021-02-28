@@ -3,13 +3,12 @@
   "version": "1.0.0",
   "description": "App that allows user to take notes",
   "main": "start.js",
-  "dependencies":{
+  "dependencies": {
     "express": "^4.17.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
   },
-  
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit1",
     "start": " node start.js",
@@ -19,14 +18,10 @@
     "type": "git",
     "url": "git+https://github.com/Chelle77322/takeNote.git"
   },
-  
   "author": "Michelle Hall",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Chelle77322/takeNote/issues"
   },
   "homepage": "https://github.com/Chelle77322/takeNote/#readme"
-  
-    
-  }
-
+}
