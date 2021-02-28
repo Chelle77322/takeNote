@@ -23,6 +23,6 @@ require("./apiRouting")(app);
 require("./htmlRouting")(app);
 
 //Start the port listening
-app.listen(port, function (){
+app.listen(port, '0.0.0.0', function (){
     console.log("App listening on port"+ port);
 });
