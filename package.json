@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "description": "App that allows user to take notes",
   "main": "start.js",
+  
   "scripts": {
-    "test": "echo \"Error: Why Won't You Just Work \" && exit1"
+    "test": "echo \"Error: Why Won't You Just Work \" && exit1",
+    "start": "start.js"
   },
   "repository": {
     "type": "git",
@@ -22,9 +24,7 @@
   },
   "devDependencies": {
     
-    },
-    "script": {
-      "start": "node start.js"
     }
+    
   }
 
