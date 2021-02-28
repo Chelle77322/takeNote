@@ -1,4 +1,4 @@
-const { request } = require("http");
+const http = require("http");
 const path = require("path");
 //Specifies HTML ROUTING for app to work
 module.exports = (app) =>{
