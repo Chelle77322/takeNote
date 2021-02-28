@@ -60,7 +60,7 @@ const renderActiveNote = () => {
     text.value = activeNote.text;
   } else {
     Title.value = '';
-    Text.value = '';
+    text.value = '';
   }
 };
 
@@ -171,7 +171,7 @@ const rendernoteStore = async (notes) => {
 const getAndRenderNotes = () => getNotes().then(rendernoteStore);
 
 if (window.location.pathname === '/notes') {
-  saveNoteBtn.addEventListener('click', handleNoteSave);
+  saveNoteBtn.click( handleNoteSave);
   newNoteBtn.addEventListener('click', handleNewNoteView);
   Title.addEventListener('keyup', handleRenderSaveBtn);
   text.addEventListener('keyup', handleRenderSaveBtn);
