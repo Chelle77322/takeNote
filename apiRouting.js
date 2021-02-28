@@ -2,11 +2,10 @@ const { request } = require("express");
 const fs = require("fs");
 //Start of API Routing for app
 module.exports = (app =>{
-    let noteStore = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
-  
-
+    
+  let noteStore = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
     app.get('/api/notes', (request, result)=> {
-        let noteStore = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
+        
         return result.json(noteStore);
         
     });
