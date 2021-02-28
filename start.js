@@ -2,7 +2,7 @@
 const express = require("express");
 //const path = require("path");
 //const fs = require("fs");
-const port = process.env.port || 8080;
+const port = process.env.port || 5001;
 
 //Making sure the db.json file is doing what it should
 const dbJson = require('./db/db.json')
@@ -23,6 +23,6 @@ require("./apiRouting")(app);
 require("./htmlRouting")(app);
 
 //Start the port listening
-app.listen(port, '0.0.0.0', function (){
+app.listen(port, function (){
     console.log("App listening on port"+ port);
 });
