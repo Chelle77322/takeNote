@@ -14,8 +14,8 @@ var app = express();
 
 //Accesses the public files so it looks all pretty like
 
-app.use(express.static(__dirname +'./public'));
-//app.use(express.static('./'));
+app.use(express.static(__dirname +'../public/'));
+app.use(express.static('./'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 

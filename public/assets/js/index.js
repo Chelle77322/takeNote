@@ -10,7 +10,7 @@ var $noteStore = $(".list-container .list-group");
 var activeNote = {};
 
 // A function for getting all notes from the db
-var loadingNotes = function (note) {
+var loadingNotes = function () {
   return $.ajax({
     url: "/api/notes",
     method: "GET"
