@@ -6,7 +6,8 @@
   
   "scripts": {
     "test": "echo \"Error: Why Won't You Just Work \" && exit1",
-    "start": "start.js"
+    "start": " node start.js",
+    "watch": "nodemon server.js"
   },
   "repository": {
     "type": "git",
