@@ -1,7 +1,7 @@
 //This is the dependencies
 const express = require("express");
-const path = require("path");
-const fs = require("fs");
+//const path = require("path"); - May not require this
+//const fs = require("fs");
 require('dotenv').config();
 const port = process.env.PORT|| 8080;
 console.log(port);
@@ -15,7 +15,7 @@ var app = express();
 
 //Accesses the public files so it looks all pretty like
 
-app.use(express.static(__dirname +'../public/'));
+app.use(express.static(__dirname +'/public'));
 app.use(express.static('./'));
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
