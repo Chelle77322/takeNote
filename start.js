@@ -4,7 +4,7 @@ const path = require("path");
 const fs = require("fs");
 require('dotenv').config();
 const port = process.env.PORT|| 8080;
-console.log(PORT);
+console.log(port);
 
 //Making sure the db.json file is doing what it should
 const dbJson = require('./db/db.json')
