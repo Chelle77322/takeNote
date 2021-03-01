@@ -70,11 +70,13 @@ var handleNoteDelete = function (event) {
   event.stopPropagation();
 
   var note = $(this)
+  
     .parent(".list-group-item")
     .data();
 
   if (activeNote.lastNote === note.lastNote) {
     activeNote = {};
+    
   }
 
   deleteNote(note.lastNote).then(function () {
@@ -87,7 +89,7 @@ var handleNoteDelete = function (event) {
 var handleNoteView = function () {
   activeNote = $(this).data();
   renderActiveNote();
-  console.log(this);
+ 
 };
 
 // Sets the activeNote to and empty object and allows the user to enter a new note

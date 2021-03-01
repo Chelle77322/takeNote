@@ -14,13 +14,13 @@ module.exports = (app =>{
 app.post('/api/notes', (request, result)=>{
     let lastID;
     if (noteStore.length){
-        lastID = Math.max(...(noteStore.map(note => note.lastNote)));
+        lastNote = Math.max(...(noteStore.map(note => note.lastNote)));
      
     }else{
         lastID = 0;
         
     }
-    const lastNote = lastID +1;
+    const note = lastID +1;
 //Adds note to array and removes last index
 noteStore.push({note, ...request.body});
 result.json(noteStore.slice(-1));

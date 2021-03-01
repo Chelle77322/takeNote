@@ -46,7 +46,7 @@ html, body {
   height: 50px;
   margin-top: 13px;
   font-size: 3rem;
-  background-color:#e8ebec;
+  background-image: url("../images/sidenote.jpeg");
   border-style: inset;
   border-color: #a18781;
   border-radius: 10px;
@@ -61,7 +61,8 @@ html, body {
   border-bottom: none;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
-  background-color:#e1c6cc;
+  background-image: url("../images/sidenote.jpeg");
+  background-size: cover;
 }
 
 .list-container {
