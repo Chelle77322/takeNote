@@ -1,4 +1,4 @@
-//Start of the code and declaring all the variables
+//Start of the code and declaring all the variables required to make this app work
 
 var $noteTitle = $(".note-title");
 var $noteText = $(".note-textarea");
@@ -10,7 +10,7 @@ var $noteStore = $(".list-container .list-group");
 var activeNote = {};
 
 // A function for getting all notes from the db
-var loadingNotes = function (note) {
+var loadingNotes = ()=> {
   return $.ajax({
     url: "/api/notes",
     method: "GET"
@@ -18,7 +18,7 @@ var loadingNotes = function (note) {
 };
 
 // A function for saving a note to the db
-var saveNote = function (note) {
+var saveNote = (note) =>{
   return $.ajax({
     url: "/api/notes",
     data: note,
@@ -27,7 +27,7 @@ var saveNote = function (note) {
 };
 
 // A function for deleting a note from the db
-var deleteNote = function (lastNote) {
+var deleteNote = (lastNote)=>{
   return $.ajax({
     url: "api/notes/" + lastNote,
     method: "DELETE"
@@ -87,16 +87,17 @@ var handleNoteDelete = function (event) {
 var handleNoteView = function () {
   activeNote = $(this).data();
   renderActiveNote();
+  console.log(this);
 };
 
 // Sets the activeNote to and empty object and allows the user to enter a new note
-var handleaddNoteView = function () {
-  activeNote = {};
+var handleaddNoteView =()=> {
+  activeNote = $(this).data();
   renderActiveNote();
 };
 
 
-var handleRenderSaveBtn = function () {
+var handleRenderSaveBtn =() => {
   if (!$noteTitle.val().trim() || !$noteText.val().trim()) {
     $noteSave.hide();
   } else {
@@ -127,7 +128,7 @@ var renderNoteStore = function (notes) {
 };
 
 // Gets notes from the db and renders them to the slastNoteebar
-var getAndRenderNotes = function () {
+var getAndRenderNotes = ()=> {
   return loadingNotes().then(function (data) {
     renderNoteStore(data);
   });

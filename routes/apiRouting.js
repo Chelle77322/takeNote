@@ -12,15 +12,15 @@ module.exports = (app =>{
     });
 //POST 
 app.post('/api/notes', (request, result)=>{
-    let lastNote;
+    let lastID;
     if (noteStore.length){
-        lastNote = Math.max(...(noteStore.map(note => note.lastNote)));
+        lastID = Math.max(...(noteStore.map(note => note.lastNote)));
      
     }else{
-        lastNote = 0;
+        lastID = 0;
         
     }
-    const note = lastNote +1;
+    const lastNote = lastID +1;
 //Adds note to array and removes last index
 noteStore.push({note, ...request.body});
 result.json(noteStore.slice(-1));

@@ -2,6 +2,12 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
+  background-image: url("../images/schedule.jpg");
+  background-size: cover;
+}
+.a.navbar-brand{
+  font-family: 'Oldenburg', sans-serif;
+
 }
 
 .save-note {
@@ -20,22 +26,34 @@ html, body {
   width: 100%;
   outline: none;
   border: none;
+  background-color:#c5c6c7;
+  border-style: inset;
+  border-color: #a18781;
+  border-radius: 10px;
 }
 
 .note-textarea {
   resize: none;
   height: calc(100% - 63px);
   padding-top: 15px;
+  background-color:#eef1f5;
+  border-style: inset;
+  border-color: #a18781;
+  border-radius: 10px;
 }
 
 .note-title {
   height: 50px;
   margin-top: 13px;
   font-size: 3rem;
+  background-color:#e8ebec;
+  border-style: inset;
+  border-color: #a18781;
+  border-radius: 10px;
 }
 
 .note-title:read-only, .note-textarea:read-only {
-  color: #757575;
+  color:#c5c6c7;
 }
 
 .list-container .card {
@@ -43,6 +61,7 @@ html, body {
   border-bottom: none;
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 0;
+  background-color:#e1c6cc;
 }
 
 .list-container {
@@ -55,11 +74,13 @@ html, body {
   border-top: none;
   border-top-right-radius: 0;
   border-top-left-radius: 0;
+  background-color:#e1c6cc;
 }
 
 .list-container i {
   font-size: 1.1rem;
   cursor: pointer;
+  background-color: #c5c6c7;
 }
 
 .list-container .list-group-item {
