@@ -1,7 +1,6 @@
 //This is the dependencies
 const express = require("express");
-//const path = require("path"); - May not require this
-//const fs = require("fs");
+
 require('dotenv').config();
 const port = process.env.PORT|| 8080;
 console.log(port);
