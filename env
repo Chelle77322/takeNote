@@ -1,3 +1,2 @@
  start.js
-const port = process.env.port|| 8080;
-console.log(port);
+PORT=5000

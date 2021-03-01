@@ -2,9 +2,9 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
-require('dotenv').config({path: __dirname + '/.env'})
-const port = process.env.port|| 8080;
-console.log(port);
+require('dotenv').config();
+const port = process.env.PORT|| 8080;
+console.log(PORT);
 
 //Making sure the db.json file is doing what it should
 const dbJson = require('./db/db.json')
