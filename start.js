@@ -24,6 +24,6 @@ require('./routes/apiRouting')(app);
 require('./routes/htmlRouting')(app);
 
 //Start the port listening
-app.listen(port, LOCAL_ADDRESS ='127.0.0.1',()=>{
+app.listen(port,()=>{
     console.log("App listening on port"+ port);
 });
