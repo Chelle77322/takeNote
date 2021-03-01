@@ -2,6 +2,7 @@
 const express = require("express");
 const path = require("path");
 const fs = require("fs");
+require('dotenv').config({path: __dirname + '/.env'})
 const port = process.env.port|| 8080;
 console.log(port);
 
