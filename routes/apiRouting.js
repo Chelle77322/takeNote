@@ -1,8 +1,9 @@
 
+ const fs = require("fs");
 
-const fs = require("fs");
+
 //Start of API Routing for app
-module.exports = (app =>{
+module.exports = (app) => {
     
   let noteStore = JSON.parse(fs.readFileSync('./db/db.json', 'utf8'));
     app.get('/api/notes', function (request, result) {
@@ -12,26 +13,26 @@ module.exports = (app =>{
     });
 //POST 
 app.post('/api/notes', (request, result)=>{
-    let lastID;
+    let idNote;
     if (noteStore.length){
-        lastNote = Math.max(...(noteStore.map(note => note.lastNote)));
+        idNote = Math.max(...(noteStore.map(note => note.idNote)));
      
     }else{
-        lastID = 0;
+        idNote = 0;
         
     }
-    const note = lastID +1;
+    const iD = idNote +1;
 //Adds note to array and removes last index
-noteStore.push({note, ...request.body});
+noteStore.push({iD, ...request.body });
 result.json(noteStore.slice(-1));
 });
 //DELETE?
-app.delete('/api/notes/:note', (request, result)=>{
-    let grabNote = noteStore.find(({note})=> note === JSON.parse(request.params.lastNote));
+app.delete('/api/notes/:iD', (request, result)=>{
+    let grabNote = noteStore.find(({iD})=> iD === JSON.parse(request.params.iD));
 //Confirms match to delete
 
 noteStore.splice(noteStore.indexOf(grabNote), 1);
 result.end("Selected Note was deleted");
 });
 
-});
+};
