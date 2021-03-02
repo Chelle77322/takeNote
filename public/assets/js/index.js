@@ -6,8 +6,9 @@ var $noteSave = $(".save-note");
 var $noteAdd = $(".new-note");
 var $noteStore = $(".list-container .list-group");
 
-// activeNote is used to keep track of the note in the textarea
+// is the note that is currently active
 var activeNote = {};
+console.log(activeNote);
 
 // A function for getting all notes from the db
 var loadingNotes = function (){
@@ -33,7 +34,7 @@ var saveNote =  function (note) {
 };
 
 // A function for deleting a note from the db
-var deleteNote = function (iD ){
+var deleteNote = function (iD ){// Error here iD is undefined
   return $.ajax({
     url: "api/notes/" + iD,
     method: "DELETE",
@@ -48,7 +49,7 @@ var renderActiveNote = function () {
   $noteSave.hide();
 
   if (activeNote.iD) {
-    console.log(activeNote.ID);
+    console.log(activeNote.iD);
     $Title.attr("readonly", true);
     $textNote.attr("readonly", true);
     $Title.val(activeNote.title);
@@ -85,16 +86,12 @@ var handleNoteDelete = function (e){
     .parent(".list-group-item")
     .data();
    
+//CODE BREAKS HERE
+ // if (activeNote.iD === note.iD) {
+   // activeNote ={};
+  //}
 
-  if (activeNote.iD === note.iD) {
-    activeNote = {};
-    console.log(activeNote.iD);
-    console.log(note.iD);
-  
-    
-  }
-
-  deleteNote(note.iD).then(function(){
+  deleteNote(activeNote.iD).then(function(){//also errors out here
     getAndRenderNotes();
     renderActiveNote();
   });
@@ -144,7 +141,7 @@ var renderNoteStore = function(notes) {
 
 // Gets notes from the db and populates the list container section of HTML
 var getAndRenderNotes = ()=> {
-  return loadingNotes().then((data)=> {
+  return loadingNotes().then(function (data) {
     renderNoteStore(data);
   });
 };

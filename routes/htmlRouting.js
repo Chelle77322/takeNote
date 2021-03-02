@@ -5,11 +5,11 @@ console.log(path);
 module.exports = (app) =>{
 
     app.get('/notes', (request, result) => {
-        result.sendFile(path.join(__dirname, "../public/notes.html"));
+        result.sendFile(path.join(__dirname, "./public/"));
 
     });
     app.get("*", (request, result) => {
-        result.sendFile(path.join(__dirname, "./public/index.html"));
+        result.sendFile(path.join(__dirname, "../public/"));
     });
 };
 

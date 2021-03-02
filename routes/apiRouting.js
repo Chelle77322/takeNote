@@ -28,8 +28,9 @@
  });
  //DELETE?
  app.delete('/api/notes/:iD', (request, result)=>{
-     let grabNote = noteStore.find(({iD})=> iD === JSON.parse(request.params.iD));
- //Confirms match to delete
+     let grabNote = noteStore.find(({iD})=> iD === JSON.parse(request.params.iD));//Not finding array ??
+    
+ 
  
  noteStore.splice(noteStore.indexOf(grabNote), 1);
  result.end("Selected Note was deleted");
