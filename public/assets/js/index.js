@@ -10,7 +10,7 @@ var $noteStore = $(".list-container .list-group");
 var activeNote = {};
 
 // A function for getting all notes from the db
-var loadingNotes = function (){
+var loadingNotes = () => {
   return $.ajax({
     url: "/api/notes",
     method: "GET",
@@ -21,7 +21,7 @@ var loadingNotes = function (){
 };
 
 // A function for saving a note to the db
-var saveNote =  function (note) {
+var saveNote = (note) => {
   return $.ajax({
     url: "/api/notes",
     data: note,
@@ -33,7 +33,7 @@ var saveNote =  function (note) {
 };
 
 // A function for deleting a note from the db
-var deleteNote = function (iD ){
+var deleteNote = (iD) =>{
   return $.ajax({
     url: "api/notes/" + iD,
     method: "DELETE",
@@ -44,7 +44,7 @@ console.log(iD);
 };
 
 // Displays active note, otherwise will just show "blank"
-var renderActiveNote = function () {
+var renderActiveNote = () => {
   $noteSave.hide();
 
   if (activeNote.iD) {
@@ -62,7 +62,7 @@ var renderActiveNote = function () {
 };
 
 // Get the note data from the inputs, save it to the db and update the view
-var handleNoteSave = function () {
+var handleNoteSave = () => {
   var addNote = {
     title: $Title.val(),
     text: $textNote.val()
@@ -88,8 +88,8 @@ var handleNoteDelete = function (e){
 
   if (activeNote.iD === note.iD) {
     activeNote = {};
-    console.log(activeNote.iD);
-    console.log(note.iD);
+    console.log(activeNote={});
+    
   
     
   }
