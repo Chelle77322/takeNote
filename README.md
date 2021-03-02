@@ -37,10 +37,10 @@
 <br />
 This application is covered by the MIT license. 
 ## Screenshots
-![Image of Note Taker download](./public/assets/images/Screenshot_1)<hr>
-![Image of Note Taker download](./public/assets/images/Screenshot_2)<hr>
-![Image of Note Taker download](./public/assets/images/Screenshot_3)<hr>
-![Image of Note Taker download](./public/assets/images/Screenshot_4)
+![Front page of Note Taker App](./public/assets/images/Screenshot_1.jpg)
+![Note page of Note Taker App](./public/assets/images/Screenshot_2.jpg)
+![Adding text to notepage](./public/assets/images/Screenshot_3.jpg)
+![Showing Save Button](./public/assets/images/Screenshot_4.jpg)
 ## Contributing
 🙋‍♀️Michelle Hall
 ## Tests
