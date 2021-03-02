@@ -21,7 +21,7 @@ var loadingNotes = () => {
 };
 
 // A function for saving a note to the db
-var saveNote = (note) => {
+var saveNote = function (note){
   return $.ajax({
     url: "/api/notes",
     data: note,
@@ -33,7 +33,7 @@ var saveNote = (note) => {
 };
 
 // A function for deleting a note from the db
-var deleteNote = (iD) =>{
+var deleteNote =  function (iD){
   return $.ajax({
     url: "api/notes/" + iD,
     method: "DELETE",
@@ -80,19 +80,13 @@ var handleNoteDelete = function (e){
   e.stopPropagation();
 
  var note = $(this)
- 
-  
     .parent(".list-group-item")
     .data();
    
-
   if (activeNote.iD === note.iD) {
     activeNote = {};
     console.log(activeNote={});
-    
-  
-    
-  }
+    }
 
   deleteNote(note.iD).then(function(){
     getAndRenderNotes();

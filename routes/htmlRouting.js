@@ -1,5 +1,5 @@
 
-const path = require('path');
+var path = require("path");
 
 
 //Specifies HTML ROUTING for app to work
