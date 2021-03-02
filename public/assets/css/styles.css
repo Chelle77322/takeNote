@@ -2,7 +2,7 @@ html, body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-image: url("../images/schedule.jpg");
+  background-image: url("../images/background.jpg");
   background-size: cover;
 }
 .a.navbar-brand{
@@ -46,7 +46,8 @@ html, body {
   height: 50px;
   margin-top: 13px;
   font-size: 3rem;
-  background-image: url("../images/sidenote.jpeg");
+  background-image: url("../images/schedule.jpg");
+  background-repeat: space;
   border-style: inset;
   border-color: #a18781;
   border-radius: 10px;
