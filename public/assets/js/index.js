@@ -34,7 +34,7 @@ var saveNote =  function (note) {
 };
 
 // A function for deleting a note from the db
-var deleteNote = function (iD ){// Error here iD is undefined
+var deleteNote = function (iD ){
   return $.ajax({
     url: "api/notes/" + iD,
     method: "DELETE",
@@ -44,12 +44,11 @@ console.log(iD);
   });
 };
 
-// Displays active note, otherwise will just show "blank"
+// Displays active note, otherwise will just show "blank"-not working
 var renderActiveNote = function () {
   $noteSave.hide();
 
   if (activeNote.iD) {
-    console.log(activeNote.iD);
     $Title.attr("readonly", true);
     $textNote.attr("readonly", true);
     $Title.val(activeNote.title);
@@ -87,7 +86,7 @@ var handleNoteDelete = function (e){
     .data();
    
 //CODE BREAKS HERE
- // if (activeNote.iD === note.iD) {
+ //if (activeNote.iD === note.iD) {
    // activeNote ={};
   //}
 

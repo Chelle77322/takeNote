@@ -9,7 +9,7 @@ module.exports = (app) =>{
 
     });
     app.get("*", (request, result) => {
-        result.sendFile(path.join(__dirname, "../public/"));
+        result.sendFile(path.join(__dirname, "./public/"));
     });
 };
 

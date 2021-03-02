@@ -19,20 +19,19 @@
      }else{
          idNote = 0;
          }
+      const iD = idNote + 1;
      
-     const iD = idNote + 1;
-     console.log(iD);
  //Adds note to array and removes last index
  noteStore.push({iD, ...request.body });
  result.json(noteStore.slice(-1));
+ console.log(iD);
  });
- //DELETE?
+
+
+ //DELETE? //Not finding array ??
  app.delete('/api/notes/:iD', (request, result)=>{
-     let grabNote = noteStore.find(({iD})=> iD === JSON.parse(request.params.iD));//Not finding array ??
-    
- 
- 
- noteStore.splice(noteStore.indexOf(grabNote), 1);
+     let grabNote = noteStore.find(({iD})=> iD ===(request.params.iD));
+    noteStore.splice(noteStore.indexOf(grabNote), 1);
  result.end("Selected Note was deleted");
  });
  
