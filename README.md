@@ -1,5 +1,21 @@
 
 <h1 align="center">Note Taker - Express</h1>
+<p align="center">
+    <img src="https://img.shields.io/github/repo-size/Chelle77322/takeNote" />
+
+    
+</p>
+  
+<p align="center">
+    <img src="https://img.shields.io/badge/Javascript-yellow" />
+    <img src="https://img.shields.io/badge/jQuery-blue"  />
+    <img src="https://img.shields.io/badge/-node.js-green" />
+    <img src="https://img.shields.io/badge/-inquirer-red" >
+     <img src="https://img.shields.io/badge/-express-blue" >
+      <img src="https://img.shields.io/badge/-filesystem-yellow" >
+    <img src="https://img.shields.io/badge/-screencastify-lightgrey" />
+    <img src="https://img.shields.io/badge/-json-orange" />
+</p>
   
 ![badge](https://img.shields.io/badge/license-MIT-brightgreen)<br />
 ## Description
@@ -15,11 +31,16 @@
 ## Installation
 💻 I WANT to be able to write and save notes
 ## Usage
-📖This project can be used freely as long as it is acknowledged
+📖run node start.js
 ## License
 ![badge](https://img.shields.io/badge/license-MIT-brightgreen)
 <br />
 This application is covered by the MIT license. 
+## Screenshots
+![Image of Note Taker download](./public/assets/images/Screenshot_1)<hr>
+![Image of Note Taker download](./public/assets/images/Screenshot_2)<hr>
+![Image of Note Taker download](./public/assets/images/Screenshot_3)<hr>
+![Image of Note Taker download](./public/assets/images/Screenshot_4)
 ## Contributing
 🙋‍♀️Michelle Hall
 ## Tests
