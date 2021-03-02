@@ -1,7 +1,6 @@
 
  const fs = require("fs");
-
-
+ 
 //Start of API Routing for app
 module.exports = (app) => {
     
@@ -12,16 +11,17 @@ module.exports = (app) => {
         
     });
 //POST 
-app.post('/api/notes', (request, result)=>{
+app.post('/api/notes', (request, result) => {
     let idNote;
     if (noteStore.length){
-        idNote = Math.max(...(noteStore.map(note => note.idNote)));
+        idNote = Math.max(...(noteStore.map(note => note.iD)));
      
     }else{
         idNote = 0;
-        
-    }
-    const iD = idNote +1;
+        }
+    
+    const iD = idNote + 1;
+    console.log(iD);
 //Adds note to array and removes last index
 noteStore.push({iD, ...request.body });
 result.json(noteStore.slice(-1));

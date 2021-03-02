@@ -9,8 +9,8 @@ module.exports = (app) =>{
         result.sendFile(path.join(__dirname, "../public/notes.html"));
 
     });
-    app.get('/', (request, result) => {
-        result.sendFile(path.join(__dirname, "../public/index.html"));
+    app.get("*", (request, result) => {
+        result.sendFile(path.join(__dirname, "./public/index.html"));
     });
 };
-console.log(path);
+

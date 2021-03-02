@@ -10,35 +10,45 @@ var $noteStore = $(".list-container .list-group");
 var activeNote = {};
 
 // A function for getting all notes from the db
-var loadingNotes = ()=> {
+var loadingNotes = function (){
   return $.ajax({
     url: "/api/notes",
-    method: "GET"
+    method: "GET",
+    success: function(result){
+      console.log(result);
+    }
   });
 };
 
 // A function for saving a note to the db
-var saveNote = (note) =>{
+var saveNote =  function (note) {
   return $.ajax({
     url: "/api/notes",
     data: note,
-    method: "POST"
+    method: "POST",
+    success: function(result){
+      console.log(result);
+    }
   });
 };
 
 // A function for deleting a note from the db
-var deleteNote = (iD)=>{
+var deleteNote = function (iD ){
   return $.ajax({
     url: "api/notes/" + iD,
-    method: "DELETE"
+    method: "DELETE",
+    success: function (iD){
+console.log(iD);
+    }
   });
 };
 
 // Displays active note, otherwise will just show "blank"
-var renderActiveNote =()=> {
+var renderActiveNote = function () {
   $noteSave.hide();
 
   if (activeNote.iD) {
+    console.log(activeNote.ID);
     $Title.attr("readonly", true);
     $textNote.attr("readonly", true);
     $Title.val(activeNote.title);
@@ -52,53 +62,57 @@ var renderActiveNote =()=> {
 };
 
 // Get the note data from the inputs, save it to the db and update the view
-var handleNoteSave =()=> {
+var handleNoteSave = function () {
   var addNote = {
     title: $Title.val(),
     text: $textNote.val()
   };
 
-  saveNote(addNote).then( (data)=> {
+  saveNote(addNote).then( function (data) {
     getAndRenderNotes();
     renderActiveNote();
   });
 };
 
 // Delete the clicked note
-var handleNoteDelete = (e) =>{
+var handleNoteDelete = function (e){
  
   e.stopPropagation();
 
-  var note = $(this)
+ var note = $(this)
+ 
   
     .parent(".list-group-item")
     .data();
+   
 
-  if (activeNote.iD == note.idNote) {
+  if (activeNote.iD === note.iD) {
     activeNote = {};
-    console.log(note.idNote);
+    console.log(activeNote.iD);
+    console.log(note.iD);
+  
     
   }
 
-  deleteNote(note.iD).then(() =>{
+  deleteNote(note.iD).then(function(){
     getAndRenderNotes();
     renderActiveNote();
   });
 };
 
 // Sets the activeNote and displays it
-var handleNoteView = ()=> {
+var handleNoteView = function (){
   activeNote = $(this).data();
   renderActiveNote();
  
 };
 
-var handleAddNoteView =()=> {
+var handleAddNoteView = function(){
   activeNote = {};
   renderActiveNote();
 };
 
-var handleRenderSaveBtn =() => {
+var handleRenderSaveBtn = function(){
   if (!$Title.val().trim() || !$textNote.val().trim()) {
     $noteSave.hide();
   } else {
@@ -107,7 +121,7 @@ var handleRenderSaveBtn =() => {
 };
 
 // Render's the list of note titles
-var renderNoteStore = (notes) => {
+var renderNoteStore = function(notes) {
   $noteStore.empty();
 
   var noteStoreItems = [];
@@ -128,7 +142,7 @@ var renderNoteStore = (notes) => {
   $noteStore.append(noteStoreItems);
 };
 
-// Gets notes from the db and renders them to the slastNoteebar
+// Gets notes from the db and populates the list container section of HTML
 var getAndRenderNotes = ()=> {
   return loadingNotes().then((data)=> {
     renderNoteStore(data);
